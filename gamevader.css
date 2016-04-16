@@ -1,4 +1,4 @@
 /*  WOW NICE COMMENTS!! */
-background {
-  background-image: image(background.png);
+body {
+  background-image: url(background.png);
 }
