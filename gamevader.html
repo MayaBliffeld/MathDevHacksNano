@@ -2,19 +2,22 @@
 <html>
 	<head>
 		<title>Vader's Dilemma</title>
+		<link rel="stylesheet" type="text/css" href="gamevader.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
-  		<link rel="stylesheet" type="text/css" href="gamevader.css">
 	</head>
 	<body>
-
+		<link rel="stylesheet" type="text/css" href="gamevader.css">
+	</head>
+	<body>
 		<script>
 		var deathscore=100;
 		var pointscore=0;
 		var player;
 		var barrier;
 		function mathAlert(){
-			// prompt
+			//****
+			var prompt = prompt("Problem 1: Solve the equation 5(-3x - 2) - (x - 3) = -4(4x + 5) + 13")
 		}
 		function bounceBack() {
 			player.attr({x:240, y:280, w:50, h:50})
@@ -74,12 +77,12 @@ barrier.onHit("Player", restartGame);
 		function restartGame() {
 			// player.attr({x: 0, y: 0});
 			player.attr({x: 30, y: 200, w: 50, h: 50});
-}
-function addPoints() {
-	Point.destroy();
-	pointscore=pointscore+1;
-}
-window.onload = gameInitialize;
+		}
+		function addPoints() {
+			Point.destroy();
+			pointscore=pointscore+1;
+		}
+		window.onload = gameInitialize;
 			</script>
 		</body>
 </html>
