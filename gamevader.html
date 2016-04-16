@@ -1,15 +1,13 @@
 
 <html>
 	<head>
-		<title> Math Jump</title>
-		<script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
-<html>
-	<head>
-		<title> Math Jump</title>
+		<title> Vader's Dilemma</title>
 		<script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
 	</head>
-	<body>
+	<body> 
+	Get Darth Vader through the obstacle course by jumping from block to block, and avoid the red squares!
 		<script>
+		var deathscore=0;
 		var player;
 		function gameInitialize() {
 			Crafty.init();
@@ -30,10 +28,19 @@
 			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
 			floor.attr({x: 240, y: 360, w: 50, h: 7});
 			floor.color("green");
+			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+			floor.attr({x: 370, y: 370, w: 60, h: 7});
+			floor.color("green");
+			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+			floor.attr({x: 500, y: 480, w: 60, h: 7});
+			floor.color("green");
+			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+			floor.attr({x: 590, y: 370, w: 60, h: 7});
+			floor.color("green");
 			var goal = Crafty.e("Goal, 2D, Color, DOM, Solid, Collision");
-			goal.attr({x:0, y: 700, w:1000, h: 2});
+			goal.attr({x:0, y: 700, w:2000, h: 2});
 			goal.color("black");
-			goal.onHit("Player", restartGame);
+			goal.onHit("Player", restartGame, deathscore = deathscore +1);
 		}
 		function restartGame() {
 			// player.attr({x: 0, y: 0});
