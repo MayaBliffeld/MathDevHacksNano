@@ -12,7 +12,7 @@
 			Crafty.init();
 
 			player = Crafty.e("Player, 2D, DOM, Image, Twoway, Gravity, Solid, Collision").image("vader.png");
-			player.attr({x: 30, y: 300, w: 20, h: 20});
+			player.attr({x: 30, y: 300, w: 50, h: 50});
 			player.image("vader.png");
 			player.twoway();
 			player.gravity("Floor");
@@ -39,7 +39,7 @@
 
 		function restartGame() {
 			// player.attr({x: 0, y: 0});
-			player.attr({x: 30, y: 300, w: 20, h: 20});
+			player.attr({x: 30, y: 300, w: 50, h: 50});
 }
 
 
