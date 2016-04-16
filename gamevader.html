@@ -11,13 +11,17 @@
 }
 </style>
 
-		<link rel="stylesheet" type="text/css" href="gamevader.css"
+		<link rel="stylesheet" type="text/css" href="gamevader.css">
 	</head>
 	<body> 
 		<script>
-		var deathscore=0;
+		var deathscore=100;
+		var pointscore=0;
 		var player;
 		var barrier;
+		function bounceBack() {
+			player.attr({x:250, y:380, w:50, h:50})
+		}
 		function gameInitialize() {
 			Crafty.init();
 			barrier = Crafty.e("Barrier, 2D, DOM, Solid, Collision");
@@ -37,9 +41,16 @@ barrier.onHit("Player", restartGame);
 			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
 			floor.attr({x: 250, y: 490, w: 50, h: 7});
 			floor.color("green");
+
+			var barrier = Crafty.e("Barrier, 2D, DOM, Solid, Collision");
+			barrier.attr({x:325, y:330, w:5, h:20});
+			barrier.onHit("Player", bounceBack);
 			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
 			floor.attr({x: 330, y: 360, w: 50, h: 7});
 			floor.color("green");
+
+
+
 			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
 			floor.attr({x: 450, y: 370, w: 60, h: 7});
 			floor.color("green");
@@ -55,11 +66,15 @@ barrier.onHit("Player", restartGame);
 			var goal = Crafty.e("Goal, 2D, Color, DOM, Solid, Collision");
 			goal.attr({x:0, y: 700, w:2000, h: 2});
 			goal.color("black");
-			goal.onHit("Player", restartGame, deathscore = deathscore +1);
+			goal.onHit("Player", restartGame, deathscore = deathscore - 10);
 		}
 		function restartGame() {
 			// player.attr({x: 0, y: 0});
 			player.attr({x: 30, y: 300, w: 50, h: 50});
+}
+function addPoints() {
+	Point.destroy();
+	pointscore=pointscore+1;
 }
 window.onload = gameInitialize;
 			</script>
