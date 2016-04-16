@@ -2,6 +2,9 @@ body{
   background-color: #e3edf0;
 }
 img{
+  position: relative;
+  top: 50%;
+  left: 45%;
 }
 .btn {
   position: relative;
@@ -9,7 +12,7 @@ img{
   left: 45%;
 }
 .btn:hover {
-
+ 
 }
 .btn:active {
 }
