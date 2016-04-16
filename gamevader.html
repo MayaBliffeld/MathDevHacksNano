@@ -4,30 +4,30 @@
 		<title>Vader's Dilemma</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
-<<<<<<< HEAD
+
 		<style>
 		body {
     background-image: url("background.png");
 }
 </style>
-=======
+
 		<link rel="stylesheet" type="text/css" href="gamevader.css"
->>>>>>> origin/master
 	</head>
 	<body> 
-	Get Darth Vader through the obstacle course by jumping from block to block, and avoid the red squares!
 		<script>
 		var deathscore=0;
 		var player;
 		var barrier;
 		function gameInitialize() {
 			Crafty.init();
-			barrier = Crafty.e("Barrier, 2D, DOM, ")
+			barrier = Crafty.e("Barrier, 2D, DOM, Solid, Collision");
+barrier.attr({x: 0, y: 0, w: 10, h: 1000});
+barrier.onHit("Player", restartGame);
 			player = Crafty.e("Player, 2D, DOM, Image, Twoway, Gravity, Solid, Collision").image("vader.png");
 			player.attr({x: 30, y: 300, w: 50, h: 50});
 			player.image("vader.png");
 			player.twoway();
-			player.gravity("Floor");
+			player.gravity("Floor","Barrier");
 			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
 			floor.attr({x: 10, y: 400, w: 50, h: 7});
 			floor.color("green");
@@ -49,8 +49,14 @@
 			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
 			floor.attr({x: 590, y: 370, w: 60, h: 7});
 			floor.color("green");
+			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+			floor.attr({x: 830, y: 380, w: 60, h: 7});
+			floor.color("green");
+			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+			floor.attr({x: 950, y: 400, w: 60, h: 7});
+			floor.color("green");
 			var goal = Crafty.e("Goal, 2D, Color, DOM, Solid, Collision");
-			goal.attr({x:-50, y: 700, w:2000, h: 2});
+			goal.attr({x:0, y: 700, w:2000, h: 2});
 			goal.color("black");
 			goal.onHit("Player", restartGame, deathscore = deathscore +1);
 		}
