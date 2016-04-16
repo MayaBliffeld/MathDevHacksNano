@@ -3,6 +3,10 @@
 	<head>
 		<title> Math Jump</title>
 		<script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
+<html>
+	<head>
+		<title> Math Jump</title>
+		<script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
 	</head>
 	<body>
 		<script>
@@ -27,7 +31,7 @@
 			floor.attr({x: 240, y: 360, w: 50, h: 7});
 			floor.color("green");
 			var goal = Crafty.e("Goal, 2D, Color, DOM, Solid, Collision");
-			goal.attr({x:0, y: 500, w:1000, h: 2});
+			goal.attr({x:0, y: 700, w:1000, h: 2});
 			goal.color("black");
 			goal.onHit("Player", restartGame);
 		}
