@@ -8,23 +8,29 @@
       body{
         background-color: #e3edf0;
       }
+      button {
+        display: inline;
+      }
       .btn {
-        margin-left: 48%;
-        font-size: 300%;
-        width: 30%;
+        padding: 3% 4%;
+        font-size: 150%;
+        width: 200px;
         height: 100px;
         background-color: #FFFFFF;
         border: 0px;
         font-family: 'Press Start 2P', cursive;
         font-smooth: never;
         -webkit-font-smoothing : none;
-        display: inline-block;
+        display: inline;
+      }
+      .btn-container {
+        margin-left: 38%;
       }
       h1 {
         font-family: 'Press Start 2P', cursive;
         font-smooth: never;
         -webkit-font-smoothing : none;
-        font-size: 80px;
+        font-size: 300%;
         margin-left: 5.5%;
       }
     </style>
@@ -32,7 +38,9 @@
   <body>
       <h1>Vader's Dilemma</h1>
       <img class="gif" src="vader400.gif" alt="vaderwow">
-      <button class="btn">Start</button>
-      <button class="btn">Random</button>
+      <div class="btn-container">
+        <button class="btn">Start</button>
+        <button class="btn">Random</button>
+      </div>
   </body>
 </html>
