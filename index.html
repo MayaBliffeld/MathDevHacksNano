@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <title>How to Play</title>
+    <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <style media="screen">
       body{
@@ -30,13 +31,28 @@
         width: 400px;
         height: 300px
       }
+      a {
+        text-decoration: none;
+      }
+      .btn {
+        padding: 3% 4%;
+        font-size: 150%;
+        width: 200px;
+        height: 100px;
+        background-color: #9EA5A8;
+        border: 0px;
+        font-family: 'Press Start 2P', cursive;
+        font-smooth: never;
+        -webkit-font-smoothing : none;
+        display: inline;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col-xs-4">
-          <u><b><h1 class="howto">How to Play</h1></b></u>
+        <h1 class="howto">How to Play</h1>
             <img class="leftright" src="VaderLeft.gif" alt="Vader Moving Left and Right"><br>
             <img class="left" src="left.png" alt="Left">
             <img class="right" src="right.png" alt="Right"><br>
@@ -51,6 +67,7 @@
         <div class="col-xs-4">
           <img class="fail" src="fail.gif" alt="Fail" />
           <h3 class="howto">Avoid the obstacles, some may even be hidden!</h3>
+          <a class="btn" href="splash.html">Back</a>
         </div>
       </div>
     </div>
