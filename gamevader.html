@@ -8,6 +8,10 @@
     </head>
     <body>
         <script>
+    function collectCoin(collision) {
+        coin.destroy();
+//        player.attr({x:680, y:330, w:50, h:50});
+    }
         var coins = 0;
         var deathscore=100;
         var pointscore=0;
@@ -31,9 +35,13 @@
         }
         function gameInitialize() {
             Crafty.init();
+        var coin = Crafty.e("Coin, 2D, DOM, Image, Solid, Collision").image("coin.png");
+            //coin.image("coin.png");
+            coin.attr({x: 680, y: 330, w: 60, h: 60});
+            coin.onHit("Player", collectCoin);
             barrier = Crafty.e("Barrier, 2D, DOM, Solid, Collision");
-barrier.attr({x: 0, y: 0, w: 10, h: 1000});
-barrier.onHit("Player", restartGame);
+            barrier.attr({x: 0, y: 0, w: 10, h: 1000});
+            barrier.onHit("Player", restartGame);
             player = Crafty.e("Player, 2D, DOM, Image, Twoway, Gravity, Solid, Collision").image("vader.png");
             player.attr({x: 30, y: 200, w: 50, h: 50});
             player.image("vader.png");
@@ -88,9 +96,6 @@ barrier.onHit("Player", restartGame);
             goal.attr({x:0, y: 700, w:2000, h: 2});
             goal.color("black");
             goal.onHit("Player", restartGame);
-            var coin = Crafty.e("Coin, 2D, DOM, Image, Twoway, Gravity, Solid, Collision").image("coin.png");
-            coin.attr({x: 680, y: 330, w: 60, h: 7});
-            coin.onHit("Player", getCoin);
         }
         function restartGame() {
             // player.attr({x: 0, y: 0});
