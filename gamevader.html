@@ -8,6 +8,7 @@
     </head>
     <body>
         <script>
+        var coins = 0;
         var deathscore=100;
         var pointscore=0;
         var player;
@@ -24,6 +25,9 @@
         };
         function bounceBack() {
             player.attr({x:240, y:280, w:50, h:50});
+        }
+        function getCoin(){
+          coins = coins + 1;
         }
         function gameInitialize() {
             Crafty.init();
@@ -84,6 +88,9 @@ barrier.onHit("Player", restartGame);
             goal.attr({x:0, y: 700, w:2000, h: 2});
             goal.color("black");
             goal.onHit("Player", restartGame);
+            var coin = Crafty.e("Coin, 2D, DOM, Image, Twoway, Gravity, Solid, Collision").image("coin.png");
+            coin.attr({x: 680, y: 330, w: 60, h: 7});
+            coin.onHit("Player", getCoin);
         }
         function restartGame() {
             // player.attr({x: 0, y: 0});
