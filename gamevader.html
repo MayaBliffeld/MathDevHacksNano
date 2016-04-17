@@ -8,17 +8,17 @@
     </head>
     <body>
         <script>
-<<<<<<< HEAD
     function collectCoin(collision) {
         coin.destroy();
-//        player.attr({x:680, y:330, w:50, h:50});
+        pointscore=pointscore +1;
+        point.destroy();
     }
         var coins = 0;
-=======
->>>>>>> origin/master
         var deathscore=100;
         var pointscore=0;
         var player;
+        var coin;
+        var point;
         var barrier;
         function mathAlert() {
             var answer;
@@ -35,10 +35,14 @@
         }
         function gameInitialize() {
             Crafty.init();
-        var coin = Crafty.e("Coin, 2D, DOM, Image, Solid, Collision").image("coin.png");
+            coin = Crafty.e("Coin, 2D, DOM, Image, Solid, Collision").image("coin.png");
             //coin.image("coin.png");
             coin.attr({x: 680, y: 330, w: 60, h: 60});
-            coin.onHit("Player", collectCoin);
+            //coin.onHit("Player", collectCoin);
+            point = Crafty.e("Point, 2D, DOM, Solid, Collision");
+            point.attr({x:700, y:340,w:20, h:20});
+            point.onHit("Player", collectCoin)
+
             barrier = Crafty.e("Barrier, 2D, DOM, Solid, Collision");
             barrier.attr({x: 0, y: 0, w: 10, h: 1000});
             barrier.onHit("Player", restartGame);
@@ -46,8 +50,7 @@
             player.attr({x: 30, y: 200, w: 50, h: 50});
             player.image("vader.png");
             player.twoway();
-            player.gravity("Floor", "Barrier");
-            player.gravity("Floor","Barrier");
+            player.gravity("Floor", "Barrier", "Coin");
             var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
             floor.attr({x: 10, y: 300, w: 50, h: 7});
             floor.color("green");
@@ -101,15 +104,11 @@
             // player.attr({x: 0, y: 0});
             deathscore = deathscore - 10;
             player.attr({x: 30, y: 200, w: 50, h: 50});
-        }
-=======
 			player = Crafty.e("Player, 2D, DOM, Image, Twoway, Gravity, Solid, Collision").image("vader.png");
 			player.attr({x: 30, y: 200, w: 50, h: 50});
 			player.image("vader.png");
 			player.twoway();
-			player.gravity("Floor", "Barrier");
-
-			player.gravity("Floor","Barrier");
+			player.gravity("Floor", "Barrier","Coin");
 			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
 			floor.attr({x: 10, y: 300, w: 50, h: 7});
 			floor.color("green");
@@ -176,7 +175,6 @@
 			deathscore = deathscore - 10;
 			player.attr({x: 30, y: 200, w: 50, h: 50});
 		}
->>>>>>> Stashed changes
 window.onload = gameInitialize;
             </script>
         </body>
