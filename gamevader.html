@@ -2,17 +2,31 @@
 <html>
 	<head>
 		<title>Vader's Dilemma</title>
+		<link rel="stylesheet" type="text/css" href="gamevader.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
+<<<<<<< HEAD
 		<link rel="stylesheet" type="text/css" href="gamevader.css">
 	</head>
 
 	<body>
+=======
+	</head>
+
+	<body>
+
+>>>>>>> origin/master
 		<script>
 		var deathscore=100;
 		var pointscore=0;
 		var player;
 		var barrier;
+
+		function mathAlert(){
+			//****
+			var prompt = prompt("Problem 1: Solve the equation 5(-3x - 2) - (x - 3) = -4(4x + 5) + 13")
+		}
+
 		var mathQuestion;
 
 		function mathAlert() {
@@ -25,8 +39,6 @@
    				Crafty.stop();
    			}
 		};
-
-
 		function bounceBack() {
 			player.attr({x:240, y:280, w:50, h:50});
 		}
@@ -58,7 +70,6 @@ barrier.onHit("Player", restartGame);
 			floor.color("green");
 
 
-
 			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
 			floor.attr({x: 460, y: 270, w: 55, h: 7});
 			floor.color("green");
@@ -71,7 +82,10 @@ barrier.onHit("Player", restartGame);
 			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
 			floor.attr({x: 910, y: 380, w: 60, h: 7});
 			floor.color("green");
-
+			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+			floor.attr({x: 1060, y: 300, w: 70, h: 7});
+			floor.color("green");
+			floor.onHit("Player",mathAlert);
 			var floor = Crafty.e("Floor, 2D, DOM, Color, Collision");
 			floor.attr({x: 1, y: 300, w: 70, h: 7});
 			floor.attr({x: 1060, y: 300, w: 70, h: 7});
@@ -95,6 +109,11 @@ barrier.onHit("Player", restartGame);
 			deathscore = deathscore - 10;
 			player.attr({x: 30, y: 200, w: 50, h: 50});
 		}
+		function addPoints() {
+			Point.destroy();
+			pointscore=pointscore+1;
+		}
+		window.onload = gameInitialize;
 function addPoints() {
 	Point.destroy();
 	pointscore=pointscore+1;
