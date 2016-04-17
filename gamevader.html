@@ -5,6 +5,10 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 		<link rel="stylesheet" type="text/css" href="gamevader.css">
 	</head>
 <<<<<<< HEAD
@@ -18,9 +22,16 @@
 		var pointscore=0;
 		var player;
 		var barrier;
-		function mathAlert(){
-			var prompt = prompt("Problem 1: Solve the equation 5(-3x - 2) - (x - 3) = -4(4x + 5) + 13");
-		}
+		var mathQuestion;
+
+		function mathAlert() {
+   		 var answer;
+   		 var answerQ1 = prompt("Solve the equation: 5(-3x - 2) - (x - 3) = -4(4x + 5) + 13");
+   		 switch(answerQ1) {
+      	   default:
+	 	   answer = "Correct! Nice Job!";
+  	  }
+	}
 		function bounceBack() {
 			player.attr({x:240, y:280, w:50, h:50})
 		}
@@ -68,7 +79,7 @@ barrier.onHit("Player", restartGame);
 			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
 			floor.attr({x: 1060, y: 300, w: 70, h: 7});
 			floor.color("green");
-			floor.onHit("Player",mathAlert);
+			floor.onHit("Player", restartGame);
 
 
 			var goal = Crafty.e("Goal, 2D, Color, DOM, Solid, Collision");
