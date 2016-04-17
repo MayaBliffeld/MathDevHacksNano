@@ -14,21 +14,14 @@
 		var player;
 		var barrier;
 
-		function mathAlert(){
-			//****
-			var prompt = prompt("Problem 1: Solve the equation 5(-3x - 2) - (x - 3) = -4(4x + 5) + 13")
-		}
-
-		var mathQuestion;
-
 		function mathAlert() {
    			var answer;
    		 	var answerQ1 = prompt("Solve the equation: 5(-3x - 2) - (x - 3) = -4(4x + 5) + 13");
    			if (isNaN(Number(answerQ1))) {
-   				answerQ1 = "Incorrect.";
+   				alert("Incorrect.");
    			} else {
-   				answerQ1
-			 = "Correct!";
+				alert("Correct!");
+			 Crafty.stop();
    			}
 		};
 		function bounceBack() {
@@ -43,11 +36,9 @@ barrier.onHit("Player", restartGame);
 			player.attr({x: 30, y: 200, w: 50, h: 50});
 			player.image("vader.png");
 			player.twoway();
-<<<<<<< Updated upstream
 			player.gravity("Floor", "Barrier");
-=======
-			player.gravity("Barrier");
->>>>>>> Stashed changes
+
+			player.gravity("Floor","Barrier");
 			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
 			floor.attr({x: 10, y: 300, w: 50, h: 7});
 			floor.color("green");
@@ -84,7 +75,6 @@ barrier.onHit("Player", restartGame);
 			floor.onHit("Player",mathAlert);
 			var floor = Crafty.e("Floor, 2D, DOM, Color, Collision");
 			floor.attr({x: 1, y: 300, w: 70, h: 7});
-<<<<<<< Updated upstream
 			floor.attr({x: 1060, y: 300, w: 70, h: 7});
 			floor.color("green");
 			//floor.onHit("Player", mathAlert);
@@ -93,18 +83,14 @@ barrier.onHit("Player", restartGame);
 			var platform = Crafty.e("Platform, 2D, DOM, Color, Collision");
 			platform.attr({x: 1060, y: 295, w: 70, h: 7});
 			platform.onHit("Player", mathAlert);
-=======
-						//floor.attr({x: 1060, y: 300, w: 70, h: 7});
 
-			floor.color("pink");
 			floor.onHit("Player", mathAlert);
->>>>>>> Stashed changes
 
 
-			var f = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
-			f.attr({x: 1, y: 305, w: 70, h: 7});
-			f.color("yellow");
-			f.onHit("Player", mathAlert);
+			var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+			floor.attr({x: 1600, y: 300, w: 70, h: 7});
+			floor.color("green");
+			floor.onHit("Player", mathAlert);
 
 
 			var goal = Crafty.e("Goal, 2D, Color, DOM, Solid, Collision");
